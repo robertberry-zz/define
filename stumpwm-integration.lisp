@@ -9,8 +9,6 @@ program does not exit of its own accord, Stumpwm might hang!"
 
 ;; define a word
 (defcommand dictionary-def (word) ((:string "Define word: "))
-  (echo-string (current-screen)
-               (run-shell-command
-                (concatenate 'string "define.py " word) t)))
+  (run-shell-command (concatenate 'string "define.py " word) t))
 
 (define-key *root-map* (kbd "C-d") "dictionary-def")
